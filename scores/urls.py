@@ -2,6 +2,10 @@ from django.urls import path
 
 from . import views
 
+app_name = "scores"
 urlpatterns = [
-    path("", views.home, name="home"),
+    # ex: /
+    path("", views.index, name="index"),
+    # ex: /5/
+    path("<int:id>/", views.detail, name="detail"),
 ]
