@@ -2,7 +2,7 @@
 {% if ordered_teams %}
     <ul>
     {% for team in ordered_teams %}
-        <li><a href="{% url 'scores:detail' team.id %}">{{ team.name }}: {{ team.points }} points</a></li>
+        <li><a href="{% url 'scores:detail' team.team_id %}">{{ team.name }}: {{ team.points }} points</a></li>
     {% endfor %}
     </ul>
 {% else %}
