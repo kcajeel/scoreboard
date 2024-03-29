@@ -1,4 +1,11 @@
 <h1>{{ team.name }}</h1>
 <u1>
-    <li>{{ team.points }}</li>
+    <li>Points: {{ team.points }}</li>
+    {% if ports %}
+        {% for p in ports %}
+            <li>{{ ports.service_name }} at # {{ ports.port_number }}: {{ ports.result_code }} </li>
+        {% endfor %}
+    {% else %}
+        <p>No ports are available</p>
+    {% endif %}
 </u1>
