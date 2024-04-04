@@ -1,11 +1,16 @@
-<h1>{{ team.name }}</h1>
-<u1>
-    <li>Points: {{ team.points }}</li>
-    {% if ports %}
-        {% for p in ports %}
-            <li>{{ ports.service_name }} at # {{ ports.port_number }}: {{ ports.result_code }} </li>
-        {% endfor %}
-    {% else %}
-        <p>No ports are available</p>
-    {% endif %}
-</u1>
+{% if team %}
+    <h1>{{ team.name }}</h1>
+    <u1>
+        <li>Total Points: {{ team.points }}</li>
+        {% if ports %}
+            {% for p in ports %}
+                <li>{{ p.points_obtained }} points from {{ p.service_name }} at # {{ p.port_number }}: {{ p.get_result_code_display }} </li>
+            {% endfor %}
+        {% else %}
+            <p>No ports are available</p>
+        {% endif %}
+    </u1>
+{% else %}
+    <p>Team doesn't exist. </p>
+    <u1>... how did you get here?</u1>
+{% endif %}

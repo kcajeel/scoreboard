@@ -11,7 +11,7 @@ def index(request):
     # where team_id = 1 -- this value can be a variable and I can do this for each team :D
     
 def detail(request, team_id):
-    team = get_object_or_404(teams, pk=team_id)
-    ports_for_team = ports.objects.filter(target_id=team_id).order_by("-points_obtained")
+    team = get_object_or_404(teams, pk=team_id) # get team object given team_id
+    ports_for_team = ports.objects.filter(target__team_id=team_id).order_by("-points_obtained") # order ports from given team by points
     context = {"team": team, "ports": ports_for_team}
     return render(request, "scores\detail.html", context)
