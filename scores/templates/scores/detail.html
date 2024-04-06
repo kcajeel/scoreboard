@@ -1,13 +1,15 @@
-
+{% load static %}
+<!-- refresh every 3s -->
 <script>
     setTimeout(() => {
         document.location.reload();
     }, 3000);
 </script>
-
+<!-- html -->
 {% if team %}
     <head>
         <title>{{ team.name }} Stats</title>
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
     </head>
     <h1>{{ team.name }}</h1>
     <u1>
