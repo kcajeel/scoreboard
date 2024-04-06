@@ -1,4 +1,14 @@
+
+<script>
+    setTimeout(() => {
+        document.location.reload();
+    }, 3000);
+</script>
+
 {% if team %}
+    <head>
+        <title>{{ team.name }} Stats</title>
+    </head>
     <h1>{{ team.name }}</h1>
     <u1>
         <li>Total Points: {{ team.points }}</li>

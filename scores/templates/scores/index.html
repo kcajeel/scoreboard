@@ -1,4 +1,12 @@
+<head>
+    <title>Scoreboard</title>
+</head>
 <h1>Scoreboard</h1>
+<script>
+    setTimeout(() => {
+        document.location.reload();
+    }, 3000);
+</script>
 {% if ordered_teams %}
     <ul>
     {% for team in ordered_teams %}

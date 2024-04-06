@@ -30,6 +30,7 @@ class ports(models.Model):
         FAIL = "FAL", "Failure"
         WARN = "PAR", "Partial"
         UNKNOWN = "UNK", "Unknown"
+        TIMEOUT = "TIM", "Timeout"
         ERROR = "ERR", "Error"
 
     port_id = models.AutoField(primary_key=True)
